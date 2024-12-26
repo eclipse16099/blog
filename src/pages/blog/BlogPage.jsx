@@ -74,7 +74,7 @@ const BlogPage = () => {
     <MainLayout>
       <section className="container flex flex-col px-5 py-10 mx-auto">
         <div className="flex flex-wrap pb-10 md:gap-x-5 gap-y-5">
-          {!isLoading || isFetching ? (
+          {isLoading || isFetching ? (
             <div className="w-full h-screen flex justify-center items-center">
               <h3 className="text-2xl text-slate-700">Loading...</h3>
             </div>
