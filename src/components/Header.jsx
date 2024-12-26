@@ -126,10 +126,15 @@ const Header = () => {
           </ul>
           {userState.userInfo ? (
             <div className="text-white items-center gap-y-5 lg:text-dark-soft flex flex-col lg:flex-row gap-x-2 font-semibold">
-
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                Level subscribe: {userState?.userInfo?.subscribe_level}
-              </button>
+              {userState?.userInfo?.admin ? (
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                  Admin
+                </button>
+              ) : (
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                  Level subscribe: {userState?.userInfo?.subscribe_level}
+                </button>
+              )}
               <div className="relative group">
                 <div className="flex flex-col items-center">
                   <button
