@@ -75,23 +75,20 @@ const BlogPage = () => {
       <section className="container flex flex-col px-5 py-10 mx-auto">
         <div className="flex flex-wrap pb-10 md:gap-x-5 gap-y-5">
           {isLoading || isFetching ? (
-            [...Array(3)].map((item, index) => (
-              <ArticleCardSkeleton
-                key={index}
-                className="w-full md:w-[calc(50%-20px)] lg:w-[calc(33.33%-21px)]"
-              />
-            ))
+            <></>
           ) : isError ? (
             <ErrorMessage message="Couldn't fetch the posts data" />
           ) : data?.data.length === 0 ? (
             <p className="text-orange-500">No Posts Found!</p>
           ) : (
             data?.data.map((post) => (
-              <ArticleCard
-                key={post._id}
-                post={post}
-                className="w-full md:w-[calc(50%-20px)] lg:w-[calc(33.33%-21px)]"
-              />
+              <div className="w-full">
+                <ArticleCard
+                  key={post._id}
+                  post={post}
+                  className="w-full mx-auto md:w-[calc(50%-20px)] lg:w-[calc(40%-21px)]"
+                />
+              </div>
             ))
           )}
         </div>

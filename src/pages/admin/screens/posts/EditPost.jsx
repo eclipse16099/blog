@@ -143,38 +143,38 @@ const EditPost = () => {
       ) : (
         <section className="container mx-auto max-w-5xl flex flex-col px-5 py-5 lg:flex-row lg:gap-x-5 lg:items-start">
           <article className="flex-1">
-            <label htmlFor="postPicture" className="w-full cursor-pointer">
-              {photo ? (
-                <img
-                  src={URL.createObjectURL(photo)}
-                  alt={data?.title}
-                  className="rounded-xl w-full"
-                />
-              ) : initialPhoto ? (
-                <img
-                  src={stables.UPLOAD_FOLDER_BASE_URL + data?.photo}
-                  alt={data?.title}
-                  className="rounded-xl w-full"
-                />
-              ) : (
-                <div className="w-full min-h-[200px] bg-blue-50/50 flex justify-center items-center">
-                  <HiOutlineCamera className="w-7 h-auto text-primary" />
-                </div>
-              )}
-            </label>
-            <input
-              type="file"
-              className="sr-only"
-              id="postPicture"
-              onChange={handleFileChange}
-            />
-            <button
-              type="button"
-              onClick={handleDeleteImage}
-              className="w-fit bg-red-500 text-sm text-white font-semibold rounded-lg px-2 py-1 mt-5"
-            >
-              Delete Image
-            </button>
+            {/*<label htmlFor="postPicture" className="w-full cursor-pointer">*/}
+            {/*  {photo ? (*/}
+            {/*    <img*/}
+            {/*      src={URL.createObjectURL(photo)}*/}
+            {/*      alt={data?.title}*/}
+            {/*      className="rounded-xl w-full"*/}
+            {/*    />*/}
+            {/*  ) : initialPhoto ? (*/}
+            {/*    <img*/}
+            {/*      src={stables.UPLOAD_FOLDER_BASE_URL + data?.photo}*/}
+            {/*      alt={data?.title}*/}
+            {/*      className="rounded-xl w-full"*/}
+            {/*    />*/}
+            {/*  ) : (*/}
+            {/*    <div className="w-full min-h-[200px] bg-blue-50/50 flex justify-center items-center">*/}
+            {/*      <HiOutlineCamera className="w-7 h-auto text-primary" />*/}
+            {/*    </div>*/}
+            {/*  )}*/}
+            {/*</label>*/}
+            {/*<input*/}
+            {/*  type="file"*/}
+            {/*  className="sr-only"*/}
+            {/*  id="postPicture"*/}
+            {/*  onChange={handleFileChange}*/}
+            {/*/>*/}
+            {/*<button*/}
+            {/*  type="button"*/}
+            {/*  onClick={handleDeleteImage}*/}
+            {/*  className="w-fit bg-red-500 text-sm text-white font-semibold rounded-lg px-2 py-1 mt-5"*/}
+            {/*>*/}
+            {/*  Delete Image*/}
+            {/*</button>*/}
             <div className="mt-7 flex gap-2">
               <div>Is Active</div>
               <input
@@ -194,44 +194,44 @@ const EditPost = () => {
                 </Link>
               ))}
             </div>
-            <div className="d-form-control w-full">
-              <label className="d-label" htmlFor="title">
-                <span className="d-label-text">Title</span>
-              </label>
-              <input
-                id="title"
-                value={title}
-                className="d-input d-input-bordered border-slate-300 !outline-slate-300 text-xl font-medium font-roboto text-dark-hard"
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder="title"
-              />
-            </div>
-            <div className="d-form-control w-full">
-              <label className="d-label" htmlFor="caption">
-                <span className="d-label-text">caption</span>
-              </label>
-              <input
-                id="caption"
-                value={caption}
-                className="d-input d-input-bordered border-slate-300 !outline-slate-300 text-xl font-medium font-roboto text-dark-hard"
-                onChange={(e) => setCaption(e.target.value)}
-                placeholder="caption"
-              />
-            </div>
-            <div className="d-form-control w-full">
-              <label className="d-label" htmlFor="slug">
-                <span className="d-label-text">slug</span>
-              </label>
-              <input
-                id="slug"
-                value={postSlug}
-                className="d-input d-input-bordered border-slate-300 !outline-slate-300 text-xl font-medium font-roboto text-dark-hard"
-                onChange={(e) =>
-                  setPostSlug(e.target.value.replace(/\s+/g, "-").toLowerCase())
-                }
-                placeholder="post slug"
-              />
-            </div>
+            {/*<div className="d-form-control w-full">*/}
+            {/*  <label className="d-label" htmlFor="title">*/}
+            {/*    <span className="d-label-text">Title</span>*/}
+            {/*  </label>*/}
+            {/*  <input*/}
+            {/*    id="title"*/}
+            {/*    value={title}*/}
+            {/*    className="d-input d-input-bordered border-slate-300 !outline-slate-300 text-xl font-medium font-roboto text-dark-hard"*/}
+            {/*    onChange={(e) => setTitle(e.target.value)}*/}
+            {/*    placeholder="title"*/}
+            {/*  />*/}
+            {/*</div>*/}
+            {/*<div className="d-form-control w-full">*/}
+            {/*  <label className="d-label" htmlFor="caption">*/}
+            {/*    <span className="d-label-text">caption</span>*/}
+            {/*  </label>*/}
+            {/*  <input*/}
+            {/*    id="caption"*/}
+            {/*    value={caption}*/}
+            {/*    className="d-input d-input-bordered border-slate-300 !outline-slate-300 text-xl font-medium font-roboto text-dark-hard"*/}
+            {/*    onChange={(e) => setCaption(e.target.value)}*/}
+            {/*    placeholder="caption"*/}
+            {/*  />*/}
+            {/*</div>*/}
+            {/*<div className="d-form-control w-full">*/}
+            {/*  <label className="d-label" htmlFor="slug">*/}
+            {/*    <span className="d-label-text">slug</span>*/}
+            {/*  </label>*/}
+            {/*  <input*/}
+            {/*    id="slug"*/}
+            {/*    value={postSlug}*/}
+            {/*    className="d-input d-input-bordered border-slate-300 !outline-slate-300 text-xl font-medium font-roboto text-dark-hard"*/}
+            {/*    onChange={(e) =>*/}
+            {/*      setPostSlug(e.target.value.replace(/\s+/g, "-").toLowerCase())*/}
+            {/*    }*/}
+            {/*    placeholder="post slug"*/}
+            {/*  />*/}
+            {/*</div>*/}
             {/*<div className="mb-5 mt-2">*/}
             {/*  <label className="d-label">*/}
             {/*    <span className="d-label-text">Subscribe level</span>*/}
@@ -262,6 +262,9 @@ const EditPost = () => {
               )}
             </div>
             <div className="w-full">
+              <label className="d-label">
+                <span className="d-label-text">Content</span>
+              </label>
               {isPostDataLoaded && (
                 <Editor
                   content={data?.body}

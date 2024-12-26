@@ -9,7 +9,7 @@ import { logout } from "../store/actions/user";
 
 const navItemsInfo = [
   { name: "Home", type: "link", href: "/" },
-  { name: "Blog", type: "link", href: "/blog", isAuth: true },
+  { name: "Posts", type: "link", href: "/posts", isAuth: true },
   // {
   //   name: "Pages",
   //   type: "dropdown",

@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react'
 import { images, stables } from "../../../../constants";
 import {deletePost, getAllPosts, updatePost} from "../../../../services/index/posts";
 import Pagination from "../../../../components/Pagination";
@@ -7,6 +8,8 @@ import { useDataTable } from "../../../../hooks/useDataTable";
 import DataTable from "../../components/DataTable";
 import {useMutation} from "@tanstack/react-query";
 import {updateProfile} from "../../../../services/index/users";
+import Editor from "../../../../components/editor/Editor";
+import moment from "moment";
 
 const ManagePosts = () => {
   const {
@@ -79,15 +82,20 @@ const ManagePosts = () => {
     }
   };
 
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    return () => {
+      console.log(searchParams)
+    };
+  }, [postsData]);
+
+
   return (
     <DataTable
       pageTitle="Manage Posts"
       dataListName="Posts"
-      searchInputPlaceHolder="Post title..."
-      searchKeywordOnSubmitHandler={submitSearchKeywordHandler}
-      searchKeywordOnChangeHandler={searchKeywordHandler}
-      searchKeyword={searchKeyword}
-      tableHeaderTitleList={["Title", "Created At", "Tags", "Is Active", ""]}
+      isHiddenSearch={true}
+      tableHeaderTitleList={["Content", "Created At", "Is Active", ""]}
       isLoading={isLoading}
       isFetching={isFetching}
       data={postsData?.data}
@@ -100,40 +108,27 @@ const ManagePosts = () => {
         <tr>
           <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
             <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <a href="/" className="relative block">
-                  <img
-                    src={
-                      post?.photo
-                        ? stables.UPLOAD_FOLDER_BASE_URL + post?.photo
-                        : images.samplePostImage
-                    }
-                    alt={post.title}
-                    className="mx-auto object-cover rounded-lg w-10 aspect-square"
-                  />
-                </a>
-              </div>
+              {/*<div className="flex-shrink-0">*/}
+              {/*  <a href="/" className="relative block">*/}
+              {/*    <img*/}
+              {/*      src={*/}
+              {/*        post?.photo*/}
+              {/*          ? stables.UPLOAD_FOLDER_BASE_URL + post?.photo*/}
+              {/*          : images.samplePostImage*/}
+              {/*      }*/}
+              {/*      alt={post.title}*/}
+              {/*      className="mx-auto object-cover rounded-lg w-10 aspect-square"*/}
+              {/*    />*/}
+              {/*  </a>*/}
+              {/*</div>*/}
               <div className="ml-3">
-                <p className="text-gray-900 whitespace-no-wrap">{post.title}</p>
+                <Editor content={post?.body} editable={false}/>
               </div>
             </div>
           </td>
           <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
             <p className="text-gray-900 whitespace-no-wrap">
-              {new Date(post.createdAt).toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "short",
-                year: "numeric",
-              })}
-            </p>
-          </td>
-          <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
-            <p className="text-gray-900 whitespace-no-wrap">
-              {new Date(post.createdAt).toLocaleDateString("en-US", {
-                day: "numeric",
-                month: "short",
-                year: "numeric",
-              })}
+              {moment(post.createdAt).format('DD.MM.YY, hh:mm:ss')}
             </p>
           </td>
           <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">

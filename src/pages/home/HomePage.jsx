@@ -13,10 +13,10 @@ const HomePage = () => {
       {!token ? (
         <Hero />
       ) : <></>}
-      {token ? (
-        <Articles />
-      ) : <></>}
-      <CTA />
+      {/*{token ? (*/}
+      {/*  <Articles />*/}
+      {/*) : <></>}*/}
+      {/*<CTA />*/}
     </MainLayout>
   );
 };

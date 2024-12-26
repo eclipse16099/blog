@@ -22,7 +22,7 @@ const Editor = ({ onDataChange, content, editable }) => {
 
   return (
     <div className="w-full h-full relative">
-      {editable && <MenuBar editor={editor} />}
+      {/*{editable && <MenuBar editor={editor} />}*/}
       <EditorContent editor={editor} className="border border-slate-300 rounded-lg p-5 pt-0 left-0 right-0 bg-white z-10 flex gap-0.5 flex-wrap mb-5 mt-5"/>
     </div>
   );

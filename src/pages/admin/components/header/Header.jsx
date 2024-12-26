@@ -93,14 +93,14 @@ const Header = () => {
                 activeNavName={activeNavName}
                 setActiveNavName={setActiveNavName}
               />
-              <NavItem
-                title="Comments"
-                link="/admin/comments"
-                icon={<FaComments className="text-xl" />}
-                name="comments"
-                activeNavName={activeNavName}
-                setActiveNavName={setActiveNavName}
-              />
+              {/*<NavItem*/}
+              {/*  title="Comments"*/}
+              {/*  link="/admin/comments"*/}
+              {/*  icon={<FaComments className="text-xl" />}*/}
+              {/*  name="comments"*/}
+              {/*  activeNavName={activeNavName}*/}
+              {/*  setActiveNavName={setActiveNavName}*/}
+              {/*/>*/}
 
               <NavItemCollapse
                 title="Posts"
@@ -119,7 +119,7 @@ const Header = () => {
                 >
                   Add New Post
                 </button>
-                <Link to="/admin/categories/manage">Categories</Link>
+                {/*<Link to="/admin/categories/manage">Categories</Link>*/}
               </NavItemCollapse>
 
               <NavItem

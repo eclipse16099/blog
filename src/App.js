@@ -24,7 +24,7 @@ function App() {
     <div className="App font-opensans">
       <Routes>
         <Route index path="/" element={<HomePage />} />
-        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/posts" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<ArticleDetailPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
