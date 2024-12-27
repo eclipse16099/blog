@@ -95,7 +95,7 @@ const ManagePosts = () => {
       pageTitle="Manage Posts"
       dataListName="Posts"
       isHiddenSearch={true}
-      tableHeaderTitleList={["Content", "Created At", "Is Active", ""]}
+      tableHeaderTitleList={["Image", "Content", "Created At", "Is Active", ""]}
       isLoading={isLoading}
       isFetching={isFetching}
       data={postsData?.data}
@@ -108,19 +108,19 @@ const ManagePosts = () => {
         <tr>
           <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
             <div className="flex items-center">
-              {/*<div className="flex-shrink-0">*/}
-              {/*  <a href="/" className="relative block">*/}
-              {/*    <img*/}
-              {/*      src={*/}
-              {/*        post?.photo*/}
-              {/*          ? stables.UPLOAD_FOLDER_BASE_URL + post?.photo*/}
-              {/*          : images.samplePostImage*/}
-              {/*      }*/}
-              {/*      alt={post.title}*/}
-              {/*      className="mx-auto object-cover rounded-lg w-10 aspect-square"*/}
-              {/*    />*/}
-              {/*  </a>*/}
-              {/*</div>*/}
+              <div className="flex-shrink-0">
+                <a href="/" className="relative block">
+                  <img
+                    src={
+                      post?.photo
+                        ? stables.UPLOAD_FOLDER_BASE_URL + post?.photo
+                        : images.samplePostImage
+                    }
+                    alt={post.title}
+                    className="mx-auto object-cover rounded-lg w-10 aspect-square"
+                  />
+                </a>
+              </div>
               <div className="ml-3">
                 <Editor content={post?.body} editable={false}/>
               </div>
