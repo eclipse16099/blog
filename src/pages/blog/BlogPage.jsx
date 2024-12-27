@@ -88,7 +88,7 @@ const BlogPage = () => {
                 <ArticleCard
                   key={post._id}
                   post={post}
-                  className="w-full mx-auto md:w-[calc(50%-20px)] lg:w-[calc(40%-21px)]"
+                  className="w-full mx-auto md:w-[calc(50%-20px)] lg:w-[calc(55%-21px)]"
                 />
               </div>
             ))
